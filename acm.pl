@@ -2,14 +2,20 @@
 use Net::ARP;
 use strict;
 use warnings;
-our $VERSION = '0.1.8';
 $SIG{INT} = \&interrupt;
 
-#######################################
-### BMN ARP Cache Poison && ARP DOS ###
-#######################################
+#############################################################################################################
+# ARPCacheMoney - ARP Cache Poison && ARP DOS  
+# Author: SJK        
+our $VERSION = '0.1.8';
+# Last modified: 2009
+# Org: BareMetal Networks
+# License: GPLv2
+# Purpose: Why did i bother? Cuz the tool accompanying dsniff meta pkg requires the user to start two instances of the poisoning tool. ARPCacheMoney forks instead.
+#          why did i name it this way? Cuz it made me laugh. Previous name was making me sad.
 
 ## ex. perl arp-cache-poison.pl eth0 10.0.0.8 10.0.0.1 10.0.0.4
+#############################################################################################################
 
 my $GID = $(;
 die "$0 must be run as root!\n" if( $GID != 0 );
