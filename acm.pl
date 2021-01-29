@@ -5,14 +5,14 @@ use warnings;
 $SIG{INT} = \&interrupt;
 
 #############################################################################################################
-# ARPCacheMoney - ARP Cache Poison && ARP DOS  
+# ARPCachePoison - ARP Cache Poison or ARP DOS  
 # Author: SJK        
 our $VERSION = '0.1.8';
 # Last modified: 2009
 # Org: BareMetal Networks
 # License: GPLv2
-# Purpose: Why did i bother? Cuz the tool accompanying dsniff meta pkg requires the user to start two instances of the poisoning tool. ARPCacheMoney forks instead.
-#          why did i name it this way? Cuz it made me laugh. Previous name was making me sad.
+# Purpose: Tool accompanying dsniff meta pkg requires the user to start two instances of the poisoning tool. 
+# 		This does not.
 
 ## ex. perl arp-cache-poison.pl eth0 10.0.0.8 10.0.0.1 10.0.0.4
 #############################################################################################################
@@ -86,7 +86,7 @@ sub title{
 system("clear");
 if($^O =~ /win/i){system("cls") }
 print "\n\n". "~" x 62 . "\n";
-printf("%6s %-30s %-6s\n", "[+]", "ARP cache poisoning tool 2009", "[+]");
+printf("%6s %-30s %-6s\n", "[+]", "ARP cache poisoning tool", "[+]");
 print "~" x 62 . "\n\n\n";
 printf("%6s %-30s %-12s\n\n\n\n\n\n", "[+]", "Poisoning cache on $target", "[+]") if($_[0]);
 }
